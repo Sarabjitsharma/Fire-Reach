@@ -14,7 +14,7 @@ def generate_completion(
     if not api_key:
         raise ValueError("GROQ_API_KEY is not configured. Please set a valid key in backend .env.")
 
-    model = str(os.getenv("GROQ_MODEL", "llama3-8b-8192")).strip() or "llama3-8b-8192"
+    model = str(os.getenv("GROQ_MODEL", "llama-3.1-8b-instant")).strip() or "llama-3.1-8b-instant"
     token_limit = int(max_completion_tokens if max_completion_tokens is not None else max_tokens)
 
     client = Groq(api_key=api_key)
