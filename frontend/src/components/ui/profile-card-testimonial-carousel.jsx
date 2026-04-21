@@ -32,15 +32,15 @@ function LinkedInIcon({ size = 17 }) {
 
 const DEFAULT_TESTIMONIALS = [
   {
-    name: 'Madhav Kalra',
-    title: 'Founder & Lead Engineer',
+    name: 'Product Team',
+    title: 'FireReach AI',
     description:
-      'Built FireReach from the ground up to automate outbound workflows using a 7-agent architecture, live signal verification, and conversion-focused outreach generation.',
-    imageUrl: '/mk.jpg',
-    instagramUrl: 'https://www.instagram.com/madhavkalra._/?hl=en',
-    emailUrl: 'mailto:madhavkalra2005@gmail.com',
-    linkedinUrl: 'https://www.linkedin.com/in/madhav-kalra',
-    websiteUrl: 'https://madhav-s-portfolio-one.vercel.app',
+      'Automating outbound workflows using a 7-agent architecture, live signal verification, and conversion-focused outreach generation.',
+    imageUrl: '/logo.png', // Generic logo placeholder
+    instagramUrl: '',
+    emailUrl: 'mailto:support@firereach.ai',
+    linkedinUrl: '',
+    websiteUrl: '',
   },
 ]
 

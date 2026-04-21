@@ -206,9 +206,8 @@ For {role_line}, this may be relevant because {icp_line or 'your team is likely 
 Would you be open to a short 15-minute conversation next week?
 
 Best regards,
-Madhav Kalra
-Founder, FireReach
-Phone: +91-9813569096"""
+The FireReach Team
+Outreach Automation Platform"""
 
     return {
         "subject": fallback_subject,
@@ -345,7 +344,7 @@ def tool_outreach_automated_sender(
     pdf_path = _resolve_pitch_path(pdf_filename)
 
     prompt = f"""
-You are an expert B2B sales development representative writing a cold outreach email on behalf of Madhav Kalra, founder of FireReach.
+You are an expert B2B sales development representative writing a cold outreach email on behalf of the FireReach team.
 
 Write a polished, professional, and highly personalized cold outreach email using the information below.
 
@@ -361,7 +360,7 @@ RESEARCH BRIEF (use this to understand the company):
 STRONGEST BUYING SIGNAL (reference this naturally in the opening):
 {signal_line}
 
-ICP CONTEXT (what Madhav is offering):
+ICP CONTEXT (what FireReach is offering):
 {icp}
 ---
 
@@ -377,14 +376,12 @@ STRICT RULES:
 9. Do NOT fabricate any facts not present in the research brief or signal.
 10. Tone: professional, warm, confident, concise — NOT salesy or robotic.
 11. Total length: 150-200 words maximum (excluding subject and signature).
-12. Write from Madhav's individual perspective only. Use I/my language, never our team/we/us.
+12. Write from the FireReach team's perspective. Use professional and engaging language.
 
 SIGNATURE BLOCK (copy exactly, do not modify):
 Best regards,
-Madhav Kalra
-Founder, FireReach
-Phone: +91-9813569096
-Email: madhavkalra2005@gmail.com
+The FireReach Team
+https://firereach.ai
 """
 
     email_payload, generation_error = _try_generate_email_payload(

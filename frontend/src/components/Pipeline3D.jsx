@@ -16,10 +16,10 @@ const STAGES = [
 const NODE_X = [-6, -4, -2, 0, 2, 4, 6]
 
 const STATUS_STYLE = {
-  pending: { color: '#334166', emissive: '#111c38' },
-  running: { color: '#ff8a47', emissive: '#ff4b0f' },
-  completed: { color: '#35d895', emissive: '#0d8a56' },
-  failed: { color: '#ff4d6d', emissive: '#a1082f' },
+  pending: { color: '#3D1B20', emissive: '#1A0A0C' },
+  running: { color: '#FB7185', emissive: '#9F1239' },
+  completed: { color: '#FBBF24', emissive: '#B45309' },
+  failed: { color: '#E11D48', emissive: '#4C0519' },
 }
 
 function getStageStatusMap(steps = []) {
@@ -84,12 +84,12 @@ function MovingBackground() {
         <bufferGeometry>
           <bufferAttribute attach="attributes-position" count={240} array={particlePositions} itemSize={3} />
         </bufferGeometry>
-        <pointsMaterial color="#6d8eff" size={0.06} sizeAttenuation transparent opacity={0.8} />
+        <pointsMaterial color="#FDA4AF" size={0.06} sizeAttenuation transparent opacity={0.8} />
       </points>
 
       <mesh ref={ringRef} position={[0, -0.15, -0.7]} rotation={[-Math.PI / 2, 0, 0]}>
         <torusGeometry args={[3.6, 0.05, 12, 120]} />
-        <meshStandardMaterial color="#2f66ff" emissive="#183f98" emissiveIntensity={0.7} />
+        <meshStandardMaterial color="#3D1B20" emissive="#1A0A0C" emissiveIntensity={0.7} />
       </mesh>
     </>
   )
@@ -111,7 +111,7 @@ function StageBeacon({ x, status, index }) {
     <group position={[x, -0.08, 0]}>
       <mesh position={[0, -0.18, 0]}>
         <cylinderGeometry args={[0.25, 0.32, 0.15, 20]} />
-        <meshStandardMaterial color="#0b1228" metalness={0.45} roughness={0.5} />
+        <meshStandardMaterial color="#1A0A0C" metalness={0.45} roughness={0.5} />
       </mesh>
 
       <mesh ref={glowRef} position={[0, 0.02, 0]}>
@@ -153,12 +153,12 @@ function RobotCourier({ progressIndex }) {
       <group ref={robotRef} position={[NODE_X[0], 0.38, 0.1]}>
         <mesh position={[0, 0.42, 0]}>
           <boxGeometry args={[0.52, 0.42, 0.36]} />
-          <meshStandardMaterial color="#8fb1ff" emissive="#2d4c9b" emissiveIntensity={0.5} metalness={0.45} roughness={0.25} />
+          <meshStandardMaterial color="#FB7185" emissive="#9F1239" emissiveIntensity={0.5} metalness={0.45} roughness={0.25} />
         </mesh>
 
         <mesh position={[0, 0.8, 0]}>
           <boxGeometry args={[0.44, 0.34, 0.32]} />
-          <meshStandardMaterial color="#dce7ff" emissive="#3c5aa8" emissiveIntensity={0.25} metalness={0.3} roughness={0.2} />
+          <meshStandardMaterial color="#FFF1F2" emissive="#BE123C" emissiveIntensity={0.25} metalness={0.3} roughness={0.2} />
         </mesh>
 
         <mesh position={[-0.09, 0.83, 0.17]}>
@@ -173,26 +173,26 @@ function RobotCourier({ progressIndex }) {
         <group ref={leftArmRef} position={[-0.34, 0.45, 0]}>
           <mesh>
             <capsuleGeometry args={[0.06, 0.26, 4, 10]} />
-            <meshStandardMaterial color="#6f90db" metalness={0.35} roughness={0.3} />
+            <meshStandardMaterial color="#FB7185" metalness={0.35} roughness={0.3} />
           </mesh>
         </group>
         <group ref={rightArmRef} position={[0.34, 0.45, 0]}>
           <mesh>
             <capsuleGeometry args={[0.06, 0.26, 4, 10]} />
-            <meshStandardMaterial color="#6f90db" metalness={0.35} roughness={0.3} />
+            <meshStandardMaterial color="#FB7185" metalness={0.35} roughness={0.3} />
           </mesh>
         </group>
 
         <group ref={leftLegRef} position={[-0.13, 0.07, 0]}>
           <mesh>
             <capsuleGeometry args={[0.07, 0.23, 4, 10]} />
-            <meshStandardMaterial color="#4f6fb8" metalness={0.35} roughness={0.35} />
+            <meshStandardMaterial color="#BE123C" metalness={0.35} roughness={0.35} />
           </mesh>
         </group>
         <group ref={rightLegRef} position={[0.13, 0.07, 0]}>
           <mesh>
             <capsuleGeometry args={[0.07, 0.23, 4, 10]} />
-            <meshStandardMaterial color="#4f6fb8" metalness={0.35} roughness={0.35} />
+            <meshStandardMaterial color="#BE123C" metalness={0.35} roughness={0.35} />
           </mesh>
         </group>
       </group>
@@ -219,7 +219,7 @@ function FlowPulse({ progressIndex }) {
   return (
     <mesh ref={pulseRef} position={[NODE_X[0], 0.06, 0]}>
       <sphereGeometry args={[0.12, 24, 24]} />
-      <meshStandardMaterial color="#ffc992" emissive="#ff6b00" emissiveIntensity={1.4} roughness={0.2} metalness={0.25} />
+      <meshStandardMaterial color="#FBBF24" emissive="#BE123C" emissiveIntensity={1.4} roughness={0.2} metalness={0.25} />
     </mesh>
   )
 }
@@ -234,25 +234,25 @@ function PipelineScene({ statusMap }) {
 
   return (
     <>
-      <color attach="background" args={['#030713']} />
-      <fog attach="fog" args={['#030713', 8, 24]} />
+      <color attach="background" args={['#0D0204']} />
+      <fog attach="fog" args={['#0D0204', 8, 24]} />
 
       <ambientLight intensity={0.45} />
-      <directionalLight position={[6, 6, 5]} intensity={1.2} color="#ffe9d6" />
-      <pointLight position={[-5, 2.4, 2]} intensity={1.0} color="#5f86ff" />
-      <pointLight position={[5, 2.2, 2]} intensity={1.0} color="#ff7f3f" />
+      <directionalLight position={[6, 6, 5]} intensity={1.2} color="#fff1f2" />
+      <pointLight position={[-5, 2.4, 2]} intensity={1.0} color="#fb7185" />
+      <pointLight position={[5, 2.2, 2]} intensity={1.0} color="#fbbf24" />
 
       <MovingBackground />
 
       <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.92, 0]}>
         <planeGeometry args={[18, 4.8]} />
-        <meshStandardMaterial color="#070d1d" metalness={0.3} roughness={0.85} />
+        <meshStandardMaterial color="#0d0204" metalness={0.3} roughness={0.85} />
       </mesh>
 
-      <Line points={trackPoints} color="#29477d" lineWidth={2.6} transparent opacity={0.95} />
+      <Line points={trackPoints} color="#3d1b20" lineWidth={2.6} transparent opacity={0.95} />
       <Line
         points={trackPoints.slice(0, Math.max(2, progressIndex + 1))}
-        color="#ff9a55"
+        color="#fb7185"
         lineWidth={3.7}
         transparent
         opacity={0.95}

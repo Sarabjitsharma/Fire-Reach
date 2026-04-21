@@ -27,7 +27,7 @@ export default function FireParticles() {
         vy: -(Math.random() * 1.5 + 0.5),
         size: Math.random() * 3 + 1,
         opacity: Math.random() * 0.6 + 0.1,
-        hue: 20 + Math.random() * 30, // orange range
+        hue: 335 + Math.random() * 20, // rose range
         life: Math.random(),
       })
     }

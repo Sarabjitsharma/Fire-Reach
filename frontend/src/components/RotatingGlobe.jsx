@@ -36,7 +36,7 @@ export default function RotatingGlobe({ width = 500, height = 500 }) {
 
     // Simple graticule lines
     const drawGraticule = () => {
-      ctx.strokeStyle = 'rgba(255, 107, 44, 0.08)'
+      ctx.strokeStyle = 'rgba(251, 113, 133, 0.08)'
       ctx.lineWidth = 0.5
 
       // Longitude lines
@@ -82,13 +82,13 @@ export default function RotatingGlobe({ width = 500, height = 500 }) {
       // Globe outline
       ctx.beginPath()
       ctx.arc(cx, cy, R, 0, Math.PI * 2)
-      ctx.strokeStyle = 'rgba(255, 107, 44, 0.2)'
+      ctx.strokeStyle = 'rgba(251, 113, 133, 0.2)'
       ctx.lineWidth = 1
       ctx.stroke()
 
       // Subtle fill
       const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, R)
-      grad.addColorStop(0, 'rgba(255, 107, 44, 0.03)')
+      grad.addColorStop(0, 'rgba(251, 113, 133, 0.03)')
       grad.addColorStop(1, 'rgba(0, 0, 0, 0)')
       ctx.fillStyle = grad
       ctx.fill()
@@ -110,7 +110,7 @@ export default function RotatingGlobe({ width = 500, height = 500 }) {
 
         ctx.beginPath()
         ctx.arc(px, py, 1.2, 0, Math.PI * 2)
-        ctx.fillStyle = `rgba(255, 107, 44, ${brightness * 0.5})`
+        ctx.fillStyle = `rgba(251, 191, 36, ${brightness * 0.5})`
         ctx.fill()
       })
 
